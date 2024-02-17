@@ -2,7 +2,7 @@ import { atom, useAtom } from 'jotai';
 
 const counter = atom(0);
 
-export default function App() {
+function App() {
   const [count, setCounter] = useAtom(counter);
   const onClick = () => setCounter(prev => prev + 1);
   return (
@@ -12,3 +12,5 @@ export default function App() {
     </div>
   )
 }
+
+export default App
