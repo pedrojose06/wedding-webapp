@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-function App() {
+function App2() {
 	const {
 		t,
 		i18n: { changeLanguage, language },
@@ -25,4 +25,4 @@ function App() {
 		</div>
 	);
 }
-export default App;
+export default App2;
