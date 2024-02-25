@@ -1,25 +1,26 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 type ButtonProps = {
-	name: string;
-	image?: string;
+	text?: string;
+	icon?: ReactNode;
 	color?: string;
 	width: number;
 };
 
-const Button: React.FC<ButtonProps> = ({ name, image, color, width }) => {
+function Button({ text, icon, color, width }: ButtonProps) {
 	return (
 		<button
+			className="flex items-center justify-center font-bold"
 			type="button"
 			style={{
-				backgroundColor: color || "blue",
+				backgroundColor: color || "white",
 				width: `${width}px`,
 			}}
 		>
-			{image && <img src={image} alt={name} />}
-			{name}
+			{icon}
+			{text}
 		</button>
 	);
-};
+}
 
 export default Button;

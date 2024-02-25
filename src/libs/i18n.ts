@@ -8,7 +8,7 @@ export default i18n
 	.use(initReactI18next)
 	.use(Backend)
 	.init({
-		lng: "en",
+		lng: "pt",
 		fallbackLng: "en",
 		debug: true,
 		returnObjects: true,

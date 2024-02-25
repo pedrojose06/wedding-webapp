@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 
 export type TDevice = "mobile" | "desktop";
 
-const [isMobile, setIsMobile] = useState(false);
-
 const useDevice = () => {
+	const [isMobile, setIsMobile] = useState(false);
 	useEffect(() => {
 		const { userAgent } = navigator;
 		userAgent.includes("Mobi") ? setIsMobile(true) : setIsMobile(false);
