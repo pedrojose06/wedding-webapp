@@ -6,20 +6,20 @@ import { activePage } from "../../atoms/Navigation/activePageATM";
 import Title from "../../components/Title/Title";
 import Button from "../../components/Button/Button";
 import ACTIVE_PAGE from "./constants";
+import { ReactNode } from "react";
+import MobileTopNavigation from "../../molecules/MobileTopNavigation/MobileTopNavigation";
+import MobileBottomNavigation from "../../molecules/MobileBottomNavigation/MobileBottomNavigation";
 
-function MobileNavigation() {
-	const btnIcon = <IoArrowBackOutline />;
-	const [page, setPage] = useAtom(activePage);
-	const { t } = useTranslation();
+interface IMobileNavigation {
+	children: ReactNode;
+}
 
+function MobileNavigation({ children }: IMobileNavigation) {
 	return (
-		<div
-			className={`flex justify-between h-16 border border-b-gray-200 ${
-				page === ACTIVE_PAGE.HOME ? "pr-16" : "pl-16"
-			}`}
-		>
-			<Button icon={btnIcon} width={64} />
-			<Title text={t(page)} />
+		<div className="relative h-dvh">
+			<MobileTopNavigation />
+			{children}
+			<MobileBottomNavigation />
 		</div>
 	);
 }

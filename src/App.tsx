@@ -5,7 +5,11 @@ import useDevice from "./assets/hooks/useDevice";
 import Home from "./assets/templates/Home/Home";
 import { useAtom } from "jotai";
 import { activePage } from "./assets/atoms/Navigation/activePageATM";
-import ACTIVE_PAGE from "./assets/templates/MobileNavigation/constants";
+import ACTIVE_PAGE, {
+	PAGES,
+} from "./assets/templates/MobileNavigation/constants";
+import GiftList from "./assets/templates/GiftList/GiftList";
+import GiftDetails from "./assets/templates/GiftDetails/GiftDetails";
 
 function App() {
 	const {
@@ -21,11 +25,18 @@ function App() {
 		setCurrentLanguage(newLanguage);
 		changeLanguage(newLanguage);
 	};
-
+	const PAGES = {
+		[ACTIVE_PAGE.HOME]: <Home />,
+		[ACTIVE_PAGE.GIFT_LIST]: <GiftList />,
+		[ACTIVE_PAGE.GIFT_LIST_DETAIL]: <GiftDetails />,
+	};
 	return (
 		<div className="App">
-			{isMobile && <MobileNavigation />}
-			{page === ACTIVE_PAGE.HOME && <Home />}
+			{isMobile ? (
+				<MobileNavigation>{PAGES[page]}</MobileNavigation>
+			) : (
+				PAGES[page]
+			)}
 		</div>
 	);
 }

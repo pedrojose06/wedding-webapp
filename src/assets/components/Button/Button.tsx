@@ -1,13 +1,13 @@
 import React, { ReactNode } from "react";
 
-type ButtonProps = {
+interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	text?: string;
 	icon?: ReactNode;
 	color?: string;
 	width: number;
-};
+}
 
-function Button({ text, icon, color, width }: ButtonProps) {
+function Button({ text, icon, color, width }: IButton) {
 	return (
 		<button
 			className="flex items-center justify-center font-bold"
