@@ -4,6 +4,7 @@ import {
 	IoHome,
 	IoHomeOutline,
 	IoLanguage,
+	IoLanguageOutline,
 	IoList,
 	IoListOutline,
 } from "react-icons/io5";
@@ -14,6 +15,7 @@ import ACTIVE_PAGE from "../../templates/MobileNavigation/constants";
 
 export default function MobileBottomNavigation() {
 	const [page, setPage] = useAtom(activePage);
+
 	return (
 		<div className="flex justify-around h-16 border border-t-gray-200 absolute bottom-0 w-full">
 			<Button
@@ -27,13 +29,21 @@ export default function MobileBottomNavigation() {
 				onClick={() => setPage(ACTIVE_PAGE.GIFT_LIST)}
 			/>
 			<Button
+				icon={page === ACTIVE_PAGE.GIFT_DETAIL ? <IoGift /> : <IoGiftOutline />}
+				width={64}
+				onClick={() => setPage(ACTIVE_PAGE.GIFT_DETAIL)}
+			/>
+			<Button
 				icon={
-					page === ACTIVE_PAGE.GIFT_LIST_DETAIL ? <IoGift /> : <IoGiftOutline />
+					page === ACTIVE_PAGE.LANGUAGES ? (
+						<IoLanguage />
+					) : (
+						<IoLanguageOutline />
+					)
 				}
 				width={64}
-				onClick={() => setPage(ACTIVE_PAGE.GIFT_LIST_DETAIL)}
+				onClick={() => setPage(ACTIVE_PAGE.LANGUAGES)}
 			/>
-			<Button icon={<IoLanguage />} width={64} />
 		</div>
 	);
 }

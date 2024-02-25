@@ -7,7 +7,7 @@ interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	width: number;
 }
 
-function Button({ text, icon, color, width }: IButton) {
+function Button({ text, icon, color, width, ...props }: IButton) {
 	return (
 		<button
 			className="flex items-center justify-center font-bold"
@@ -16,6 +16,7 @@ function Button({ text, icon, color, width }: IButton) {
 				backgroundColor: color || "white",
 				width: `${width}px`,
 			}}
+			{...props}
 		>
 			{icon}
 			{text}

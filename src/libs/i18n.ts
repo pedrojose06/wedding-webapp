@@ -10,7 +10,7 @@ export default i18n
 	.init({
 		lng: "pt",
 		fallbackLng: "en",
-		debug: true,
+		debug: false,
 		returnObjects: true,
 		backend: {
 			loadPath: "/locales/{{lng}}/translation.json",
