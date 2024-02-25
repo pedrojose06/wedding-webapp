@@ -1,14 +1,12 @@
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
-import MobileNavigation from "./assets/templates/MobileNavigation/MobileNavigation";
-import useDevice from "./assets/hooks/useDevice";
-import Home from "./assets/templates/Home/Home";
+import MobileNavigation from "./templates/MobileNavigation/MobileNavigation";
+import useDevice from "./hooks/useDevice";
+import Home from "./templates/Home/Home";
 import { useAtom } from "jotai";
-import { activePage } from "./assets/atoms/Navigation/activePageATM";
-import ACTIVE_PAGE from "./assets/templates/MobileNavigation/constants";
-import GiftList from "./assets/templates/GiftList/GiftList";
-import GiftDetails from "./assets/templates/GiftDetails/GiftDetails";
-import ChangeLanguage from "./assets/templates/ChangeLanguage/ChangeLanguage";
+import { activePage } from "./atoms/Navigation/activePageATM";
+import ACTIVE_PAGE from "./templates/MobileNavigation/constants";
+import GiftList from "./templates/GiftList/GiftList";
+import GiftDetails from "./templates/GiftDetails/GiftDetails";
+import ChangeLanguage from "./templates/ChangeLanguage/ChangeLanguage";
 
 function App() {
 	const isMobile = useDevice();

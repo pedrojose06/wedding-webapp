@@ -25,8 +25,8 @@ export default function MobileTopNavigation() {
 		>
 			{page !== ACTIVE_PAGE.HOME && (
 				<Button
+					className="w-16 h-16 flex justify-center items-center"
 					icon={btnIcon}
-					width={64}
 					onClick={() => setPage(PAGE_BACK[page])}
 				/>
 			)}

@@ -4,7 +4,7 @@ interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	text?: string;
 	icon?: ReactNode;
 	color?: string;
-	width: number;
+	width?: number;
 }
 
 function Button({ text, icon, color, width, ...props }: IButton) {
@@ -12,10 +12,6 @@ function Button({ text, icon, color, width, ...props }: IButton) {
 		<button
 			className="flex items-center justify-center font-bold"
 			type="button"
-			style={{
-				backgroundColor: color || "white",
-				width: `${width}px`,
-			}}
 			{...props}
 		>
 			{icon}
