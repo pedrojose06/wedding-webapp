@@ -1,3 +1,6 @@
+import Gift from "../../molecules/Gift/Gift";
+import { Each } from "../../utils/Each";
+
 interface IGifts {
 	name: string;
 	img: string;
@@ -13,13 +16,7 @@ const gifts: IGifts[] = [
 ];
 
 function GiftList() {
-	return (
-		<ul>
-			{gifts.map((gift) => (
-				<li>{gift.name}</li>
-			))}
-		</ul>
-	);
+	return <Each of={gifts} render={(item, index) => <Gift />} />;
 }
 
 export default GiftList;

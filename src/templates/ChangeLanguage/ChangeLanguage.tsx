@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { activeLanguage } from "../../atoms/Languages/activeLanguage";
 export default function ChangeLanguage() {
 	const {
 		t,
@@ -13,16 +11,10 @@ export default function ChangeLanguage() {
 		changeLanguage(event.target.value);
 	};
 	return (
-		<select onChange={handleChangeLanguage}>
-			<option selected={language === "fr"} value="fr">
-				French
-			</option>
-			<option selected={language === "pt"} value="pt">
-				Portuguese
-			</option>
-			<option selected={language === "en"} value="en">
-				English
-			</option>
+		<select onChange={handleChangeLanguage} value={language}>
+			<option value="fr">French</option>
+			<option value="pt">Portuguese</option>
+			<option value="en">English</option>
 		</select>
 	);
 }
