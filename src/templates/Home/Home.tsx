@@ -14,14 +14,14 @@ export default function Home() {
 
 	return (
 		<div className="h-full">
-			<Image src={Wedding} alt={t("Wedding")} className="w-full max-h-96" />
-			<h1 className="p-4 bold text-2xl">Clara & Pedro</h1>
-			<p className="pt-4 pl-4">Saturday, June 23, 2022</p>
-			<p className="p-4 pt-2">Bauru - SP</p>
+			<Image src={Wedding} alt={t("Casamento")} className="w-full max-h-96" />
+			<h1 className="p-4 bold text-2xl">{t("Nomes")}</h1>
+			<p className="pt-4 pl-4">{t("Data")}</p>
+			<p className="p-4 pt-2">{t("Local")}</p>
 			<div className="flex w-full justify-center pt-7">
 				<Button
 					className="w-3/4 bg-indigo-400 text-white rounded-full h-10"
-					text="Nos de um"
+					text={t("NosDeUmPresente")}
 					onClick={() => setHomepage(ACTIVE_PAGE.GIFT_LIST)}
 				/>
 			</div>
