@@ -1,22 +1,39 @@
+import { useTranslation } from "react-i18next";
 import Gift from "../../molecules/Gift/Gift";
 import { Each } from "../../utils/Each";
 
-interface IGifts {
+export interface IGifts {
 	name: string;
-	img: string;
+	image: string;
 	price: number;
 }
 
 const gifts: IGifts[] = [
-	{ name: "Gift 1", img: "img1.jpg", price: 100 },
-	{ name: "Gift 2", img: "img2.jpg", price: 200 },
-	{ name: "Gift 3", img: "img3.jpg", price: 300 },
-	{ name: "Gift 4", img: "img4.jpg", price: 400 },
-	{ name: "Gift 5", img: "img5.jpg", price: 500 },
+	{ name: "Gift 1", image: "../../../src/assets/png/wedding.png", price: 100 },
+	{ name: "Gift 2", image: "../../../src/assets/png/wedding.png", price: 200 },
+	{ name: "Gift 3", image: "../../../src/assets/png/wedding.png", price: 300 },
+	{ name: "Gift 4", image: "../../../src/assets/png/wedding.png", price: 400 },
+	{ name: "Gift 5", image: "../../../src/assets/png/wedding.png", price: 500 },
 ];
 
 function GiftList() {
-	return <Each of={gifts} render={(item, index) => <Gift />} />;
+	const { t } = useTranslation();
+	return (
+		<>
+			<h1 className="p-4 bold text-2xl">{t("PresentesEExperiencias")}</h1>
+			<Each
+				of={gifts}
+				render={(item, index) => (
+					<Gift
+						key={index}
+						name={item.name}
+						image={item.image}
+						price={item.price}
+					/>
+				)}
+			/>
+		</>
+	);
 }
 
 export default GiftList;

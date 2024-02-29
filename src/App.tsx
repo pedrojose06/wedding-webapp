@@ -20,30 +20,83 @@ function App() {
 	const [page, setPage] = useAtom(activePage);
 
 	const PAGES = {
-		[ACTIVE_PAGE.HOME]: <Home />,
-		[ACTIVE_PAGE.GIFT_LIST]: <GiftList />,
-		[ACTIVE_PAGE.GIFT_DETAIL]: <GiftDetails />,
-		[ACTIVE_PAGE.LANGUAGES]: <ChangeLanguage />,
+		[ACTIVE_PAGE.HOME]: (
+			<Suspense
+				fallback={
+					<div className="p-4">
+						<SkeletonLoader count={1} height={200} />
+						<SkeletonLoader
+							count={3}
+							height={40}
+							width="50%"
+							className="mt-7"
+						/>
+						<SkeletonLoader count={1} height={70} className="mt-7" />
+					</div>
+				}
+			>
+				<Home />
+			</Suspense>
+		),
+		[ACTIVE_PAGE.GIFT_LIST]: (
+			<Suspense
+				fallback={
+					<div className="p-4">
+						<SkeletonLoader count={1} height={200} />
+						<SkeletonLoader
+							count={3}
+							height={40}
+							width="50%"
+							className="mt-7"
+						/>
+						<SkeletonLoader count={1} height={70} className="mt-7" />
+					</div>
+				}
+			>
+				<GiftList />
+			</Suspense>
+		),
+		[ACTIVE_PAGE.GIFT_DETAIL]: (
+			<Suspense
+				fallback={
+					<div className="p-4">
+						<SkeletonLoader count={1} height={200} />
+						<SkeletonLoader
+							count={3}
+							height={40}
+							width="50%"
+							className="mt-7"
+						/>
+						<SkeletonLoader count={1} height={70} className="mt-7" />
+					</div>
+				}
+			>
+				<GiftDetails />
+			</Suspense>
+		),
+		[ACTIVE_PAGE.LANGUAGES]: (
+			<Suspense
+				fallback={
+					<div className="p-4">
+						<SkeletonLoader count={1} height={200} />
+						<SkeletonLoader
+							count={3}
+							height={40}
+							width="50%"
+							className="mt-7"
+						/>
+						<SkeletonLoader count={1} height={70} className="mt-7" />
+					</div>
+				}
+			>
+				<ChangeLanguage />
+			</Suspense>
+		),
 	};
 	return (
 		<div className="App">
 			{isMobile ? (
-				<Suspense
-					fallback={
-						<div className="p-4">
-							<SkeletonLoader count={1} height={250} />
-							<SkeletonLoader
-								count={3}
-								height={40}
-								width="50%"
-								className="mt-7"
-							/>
-							<SkeletonLoader count={1} height={70} className="mt-7" />
-						</div>
-					}
-				>
-					<MobileNavigation>{PAGES[page]}</MobileNavigation>
-				</Suspense>
+				<MobileNavigation>{PAGES[page]}</MobileNavigation>
 			) : (
 				PAGES[page]
 			)}
