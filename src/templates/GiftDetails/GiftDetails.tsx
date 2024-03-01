@@ -1,51 +1,83 @@
-import { useAtom } from "jotai";
+import { atom, useAtom } from "jotai";
 import { useTranslation } from "react-i18next";
 
-import Lottie from "react-lottie";
-import animationData from "../../assets/lotties/gift.json";
+import { IoQrCode } from "react-icons/io5";
 import { activeGift } from "../../atoms/GiftChosen/activeGift";
-import { activePage } from "../../atoms/Navigation/activePageATM";
 import Button from "../../components/Button/Button";
 import Image from "../../components/Image/Image";
-import ACTIVE_PAGE from "../MobileNavigation/constants";
+import Input from "../../components/Input/Input";
+import GiftNotChosen from "../../molecules/GiftNotChosen/GiftNotChosen";
+const qtdValue = atom(1);
 
 export default function GiftDetails() {
 	const [chosenGift] = useAtom(activeGift);
-	const [, setPage] = useAtom(activePage);
+	const [qtd, setQtd] = useAtom(qtdValue);
+	// const initialValue = atom(qtd * chosenGift.price);
+
+	// const [count, setCounter] = useAtom(initialValue);
+
 	const { t } = useTranslation();
-	const defaultOptions = {
-		loop: true,
-		autoplay: true,
-		animationData: animationData,
-		rendererSettings: {
-			preserveAspectRatio: "xMidYMid slice",
-		},
+
+	const validateQtd = (e: React.ChangeEvent<HTMLInputElement>) => {
+		if (
+			e.target.value === "" ||
+			e.target.value === "0" ||
+			Number(e.target.value) <= 0
+		) {
+			e.target.value = qtd.toString();
+			return;
+		}
+	};
+
+	const handleQtdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		if (Number(e.target.value) <= 0) return;
+		setTimeout(() => {
+			setQtd(Number(e.target.value));
+		}, 300);
 	};
 
 	return (
 		<>
-			{/* <a href="https://lordicon.com/">Icons by Lordicon.com</a> */}
 			{Object.keys(chosenGift).length ? (
-				<>
+				<div className="pb-20">
 					<h1 className="p-4 bold text-2xl text-center">{chosenGift.name}</h1>
 					<Image src={chosenGift.image} alt={chosenGift.name} className="" />
-					<div className="text-center p-4">
-						<p>
-							{t("Moeda")} {chosenGift.price}
-						</p>
+					<div className="p-4">
+						<Input
+							value={`${t("Moeda")} ${chosenGift.price.toLocaleString("pt-br", {
+								minimumFractionDigits: 2,
+							})}`}
+							text={t("PrecoUnitario")}
+							isBlocked
+						/>
+						<Input
+							type="number"
+							defaultValue={1}
+							onBlur={validateQtd}
+							onFocus={(e) => {
+								e.target.value = "";
+							}}
+							onInput={handleQtdChange}
+							text={t("Quantidade")}
+						/>
+						<Input
+							value={`${t("Moeda")} ${(qtd * chosenGift.price).toLocaleString(
+								"pt-br",
+								{ minimumFractionDigits: 2 },
+							)}`}
+							text={t("Total")}
+							isBlocked
+						/>
 					</div>
-				</>
-			) : (
-				<div className="flex flex-col mt-20 items-center justify-center">
-					<Lottie options={defaultOptions} height={200} width={200} />
-					<h1 className="p-4 bold text-2xl text-center">
-						{t("NenhumPresenteEscolhido")}
-					</h1>
 					<Button
-						className="bg-gray-200 h-9 w-fit border rounded-3xl px-4"
-						text={t("IrParaListaDePresentes")}
-						onClick={() => setPage(ACTIVE_PAGE.GIFT_LIST)}
+						className="bg-indigo-500 text-white w-4/5 rounded-2xl flex justify-center items-center mx-auto h-12"
+						icon={<IoQrCode className="mr-3" color="white" />}
+						text={t("GerarQRCode")}
 					/>
+				</div>
+			) : (
+				<div className="py-20">
+					<GiftNotChosen />
 				</div>
 			)}
 		</>

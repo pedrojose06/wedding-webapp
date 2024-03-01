@@ -4,6 +4,7 @@
     "ListaDePresentes": "Gift List",
     "DetalhesDoPresente": "Gift Details",
     "Idiomas": "Languages",
+    "QrCode": "QR Code",
     "Nomes": "Clara & Pedro",
     "Data": "Saturday, June 23, 2022",
     "Local": "Bauru - SP",
@@ -12,5 +13,8 @@
     "PresentesEExperiencias": "Gifts and Experiences",
     "Presentear": "Gift",
     "NenhumPresenteEscolhido": "No gift chosen",
-    "IrParaListaDePresentes" : "Go to Gift List"
+    "IrParaListaDePresentes" : "Go to Gift List",
+    "PrecoUnitario": "Unit Price",
+    "Quantidade": "Quantity",
+    "Total": "Amount"
 } 

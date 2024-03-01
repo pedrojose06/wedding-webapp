@@ -23,7 +23,7 @@ function App() {
 		[ACTIVE_PAGE.HOME]: (
 			<Suspense
 				fallback={
-					<div className="p-4">
+					<div className="p-4 h-full">
 						<SkeletonLoader count={1} height={200} />
 						<SkeletonLoader
 							count={3}
@@ -41,7 +41,7 @@ function App() {
 		[ACTIVE_PAGE.GIFT_LIST]: (
 			<Suspense
 				fallback={
-					<div className="p-4">
+					<div className="p-4 h-full">
 						<SkeletonLoader count={1} height={40} width="100%" />
 						<SkeletonLoader
 							count={3}
@@ -59,7 +59,7 @@ function App() {
 		[ACTIVE_PAGE.GIFT_DETAIL]: (
 			<Suspense
 				fallback={
-					<div className="p-4">
+					<div className="p-4  h-full">
 						<SkeletonLoader count={1} height={200} />
 						<SkeletonLoader
 							count={3}
@@ -77,7 +77,7 @@ function App() {
 		[ACTIVE_PAGE.LANGUAGES]: (
 			<Suspense
 				fallback={
-					<div className="p-4">
+					<div className="p-4  h-full">
 						<SkeletonLoader count={1} height={200} />
 						<SkeletonLoader
 							count={3}

@@ -1,3 +1,4 @@
+import { useAtom } from "jotai";
 import {
 	IoGift,
 	IoGiftOutline,
@@ -8,16 +9,15 @@ import {
 	IoList,
 	IoListOutline,
 } from "react-icons/io5";
-import Button from "../../components/Button/Button";
 import { activePage } from "../../atoms/Navigation/activePageATM";
-import { useAtom } from "jotai";
+import Button from "../../components/Button/Button";
 import ACTIVE_PAGE from "../../templates/MobileNavigation/constants";
 
 export default function MobileBottomNavigation() {
 	const [page, setPage] = useAtom(activePage);
 
 	return (
-		<div className="flex justify-around h-16 border border-t-gray-200 absolute bottom-0 w-full">
+		<div className="flex justify-around h-16 border border-t-gray-200 bottom-0 w-full bg-white fixed bottom-0 ">
 			<Button
 				icon={page === ACTIVE_PAGE.HOME ? <IoHome /> : <IoHomeOutline />}
 				width={64}

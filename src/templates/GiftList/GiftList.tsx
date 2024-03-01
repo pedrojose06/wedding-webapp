@@ -1,20 +1,14 @@
 import { useTranslation } from "react-i18next";
+import giftList from "../../assets/json/gifts/gift-list.json";
 import { IGifts } from "../../atoms/GiftChosen/activeGift";
 import Gift from "../../molecules/Gift/Gift";
 import { Each } from "../../utils/Each";
 
-const gifts: IGifts[] = [
-	{ name: "Gift 1", image: "../../../src/assets/png/wedding.png", price: 100 },
-	{ name: "Gift 2", image: "../../../src/assets/png/wedding.png", price: 200 },
-	{ name: "Gift 3", image: "../../../src/assets/png/wedding.png", price: 300 },
-	{ name: "Gift 4", image: "../../../src/assets/png/wedding.png", price: 400 },
-	{ name: "Gift 5", image: "../../../src/assets/png/wedding.png", price: 500 },
-];
-
 function GiftList() {
 	const { t } = useTranslation();
+	const gifts = giftList as IGifts[];
 	return (
-		<>
+		<div className="pb-20">
 			<h1 className="p-4 bold text-2xl">{t("PresentesEExperiencias")}</h1>
 			<Each
 				of={gifts}
@@ -27,7 +21,7 @@ function GiftList() {
 					/>
 				)}
 			/>
-		</>
+		</div>
 	);
 }
 

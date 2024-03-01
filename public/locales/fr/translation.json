@@ -4,6 +4,7 @@
     "ListaDePresentes": "Liste de cadeaux",
     "DetalhesDoPresente": "Détails du cadeau",
     "Idiomas": "Langues",
+    "QrCode": "QR Code",
     "Nomes": "Clara & Pedro",
     "Data": "Samedi 23 juin 2024",
     "Local": "Bauru - SP",
@@ -12,5 +13,8 @@
     "PresentesEExperiencias": "Cadeaux et expériences",
     "Presentear": "Offrir",
     "NenhumPresenteEscolhido": "Aucun cadeau choisi",
-    "IrParaListaDePresentes" : "Voir la liste de cadeaux"
+    "IrParaListaDePresentes" : "Voir la liste de cadeaux",
+    "PrecoUnitario": "Prix unitaire",
+    "Quantidade": "Quantité",
+    "Total": "Totale"
 } 

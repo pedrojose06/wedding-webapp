@@ -4,6 +4,7 @@
     "ListaDePresentes": "Lista de Presentes",
     "DetalhesDoPresente": "Detalhes do Presente",
     "Idiomas": "Idiomas",
+    "QrCode": "QR Code",
     "Nomes": "Clara & Pedro",
     "Data": "Sabado, 23 de junho de 2024",
     "Local": "Bauru - SP",
@@ -12,5 +13,8 @@
     "PresentesEExperiencias": "Presentes e Experiências",
     "Presentear": "Presentear",
     "NenhumPresenteEscolhido": "Voce ainda não escolheu nenhum presente :'(",
-    "IrParaListaDePresentes" : "Ir para lista de presentes"
+    "IrParaListaDePresentes" : "Ir para lista de presentes",
+    "PrecoUnitario": "Preço unitário",
+    "Quantidade": "Quantidade",
+    "Total": "Total"
 } 

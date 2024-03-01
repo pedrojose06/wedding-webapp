@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import MobileTopNavigation from "../../molecules/MobileTopNavigation/MobileTopNavigation";
 import MobileBottomNavigation from "../../molecules/MobileBottomNavigation/MobileBottomNavigation";
+import MobileTopNavigation from "../../molecules/MobileTopNavigation/MobileTopNavigation";
 
 interface IMobileNavigation {
 	children: ReactNode;
@@ -8,7 +8,7 @@ interface IMobileNavigation {
 
 function MobileNavigation({ children }: IMobileNavigation) {
 	return (
-		<div className="relative h-dvh">
+		<div className="relative h-dvh ">
 			<MobileTopNavigation />
 			{children}
 			<MobileBottomNavigation />

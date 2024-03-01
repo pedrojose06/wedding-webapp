@@ -3,6 +3,7 @@ const ACTIVE_PAGE = {
 	GIFT_LIST: "ListaDePresentes",
 	GIFT_DETAIL: "DetalhesDoPresente",
 	LANGUAGES: "Idiomas",
+	QRCODE: "QrCode",
 };
 
 export const PAGES = Object.values(ACTIVE_PAGE);
