@@ -1,10 +1,20 @@
+import { useAtom } from "jotai";
 import { useTranslation } from "react-i18next";
+import { IGifts, activeGift } from "../../atoms/GiftChosen/activeGift";
+import { activePage } from "../../atoms/Navigation/activePageATM";
 import Button from "../../components/Button/Button";
 import Image from "../../components/Image/Image";
-import { IGifts } from "../../templates/GiftList/GiftList";
+import ACTIVE_PAGE from "../../templates/MobileNavigation/constants";
 
 export default function Gift({ name, image, price }: IGifts) {
 	const { t } = useTranslation();
+	const [, setChosenGift] = useAtom(activeGift);
+	const [, setPage] = useAtom(activePage);
+
+	const handleGiftChosen = () => {
+		setChosenGift({ name, image, price });
+		setPage(ACTIVE_PAGE.GIFT_DETAIL);
+	};
 	return (
 		<div className="flex justify-between px-4 pt-4 items-center">
 			<div className="flex">
@@ -24,6 +34,7 @@ export default function Gift({ name, image, price }: IGifts) {
 			<Button
 				className="bg-gray-200 h-9 w-24 border rounded-3xl"
 				text={t("Presentear")}
+				onClick={handleGiftChosen}
 			/>
 		</div>
 	);

@@ -10,5 +10,7 @@
     "NosDeUmPresente": "Give us a gift",
     "Moeda": "BRL",
     "PresentesEExperiencias": "Gifts and Experiences",
-    "Presentear": "Gift"
+    "Presentear": "Gift",
+    "NenhumPresenteEscolhido": "No gift chosen",
+    "IrParaListaDePresentes" : "Go to Gift List"
 } 

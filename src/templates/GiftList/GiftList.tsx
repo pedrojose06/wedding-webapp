@@ -1,12 +1,7 @@
 import { useTranslation } from "react-i18next";
+import { IGifts } from "../../atoms/GiftChosen/activeGift";
 import Gift from "../../molecules/Gift/Gift";
 import { Each } from "../../utils/Each";
-
-export interface IGifts {
-	name: string;
-	image: string;
-	price: number;
-}
 
 const gifts: IGifts[] = [
 	{ name: "Gift 1", image: "../../../src/assets/png/wedding.png", price: 100 },

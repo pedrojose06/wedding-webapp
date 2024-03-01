@@ -42,14 +42,14 @@ function App() {
 			<Suspense
 				fallback={
 					<div className="p-4">
-						<SkeletonLoader count={1} height={200} />
+						<SkeletonLoader count={1} height={40} width="100%" />
 						<SkeletonLoader
 							count={3}
 							height={40}
 							width="50%"
 							className="mt-7"
 						/>
-						<SkeletonLoader count={1} height={70} className="mt-7" />
+						<SkeletonLoader count={1} width={70} height={40} className="mt-7" />
 					</div>
 				}
 			>
