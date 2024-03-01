@@ -1,8 +1,8 @@
 import { useAtom } from "jotai";
 import { useTranslation } from "react-i18next";
-import { ReactSVG } from "react-svg";
 
-import Svg from "../../../src/assets/svg/empty-gift.svg";
+import Lottie from "react-lottie";
+import animationData from "../../assets/lotties/gift.json";
 import { activeGift } from "../../atoms/GiftChosen/activeGift";
 import { activePage } from "../../atoms/Navigation/activePageATM";
 import Button from "../../components/Button/Button";
@@ -13,9 +13,18 @@ export default function GiftDetails() {
 	const [chosenGift] = useAtom(activeGift);
 	const [, setPage] = useAtom(activePage);
 	const { t } = useTranslation();
+	const defaultOptions = {
+		loop: true,
+		autoplay: true,
+		animationData: animationData,
+		rendererSettings: {
+			preserveAspectRatio: "xMidYMid slice",
+		},
+	};
 
 	return (
 		<>
+			{/* <a href="https://lordicon.com/">Icons by Lordicon.com</a> */}
 			{Object.keys(chosenGift).length ? (
 				<>
 					<h1 className="p-4 bold text-2xl text-center">{chosenGift.name}</h1>
@@ -28,11 +37,7 @@ export default function GiftDetails() {
 				</>
 			) : (
 				<div className="flex flex-col mt-20 items-center justify-center">
-					<ReactSVG
-						src={Svg}
-						wrapper="span"
-						className="svg-class-name flex justify-center m-4"
-					/>
+					<Lottie options={defaultOptions} height={200} width={200} />
 					<h1 className="p-4 bold text-2xl text-center">
 						{t("NenhumPresenteEscolhido")}
 					</h1>
