@@ -3,19 +3,18 @@ import { useTranslation } from "react-i18next";
 
 import { IoQrCode } from "react-icons/io5";
 import { activeGift } from "../../atoms/GiftChosen/activeGift";
+import { activePage } from "../../atoms/Navigation/activePageATM";
 import Button from "../../components/Button/Button";
 import Image from "../../components/Image/Image";
 import Input from "../../components/Input/Input";
 import GiftNotChosen from "../../molecules/GiftNotChosen/GiftNotChosen";
+import ACTIVE_PAGE from "../MobileNavigation/constants";
 const qtdValue = atom(1);
 
 export default function GiftDetails() {
 	const [chosenGift] = useAtom(activeGift);
 	const [qtd, setQtd] = useAtom(qtdValue);
-	// const initialValue = atom(qtd * chosenGift.price);
-
-	// const [count, setCounter] = useAtom(initialValue);
-
+	const [, setPage] = useAtom(activePage);
 	const { t } = useTranslation();
 
 	const validateQtd = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -72,6 +71,7 @@ export default function GiftDetails() {
 					<Button
 						className="bg-indigo-500 text-white w-4/5 rounded-2xl flex justify-center items-center mx-auto h-12"
 						icon={<IoQrCode className="mr-3" color="white" />}
+						onClick={() => setPage(ACTIVE_PAGE.QRCODE)}
 						text={t("GerarQRCode")}
 					/>
 				</div>

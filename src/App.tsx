@@ -4,6 +4,7 @@ import { activePage } from "./atoms/Navigation/activePageATM";
 import SkeletonLoader from "./components/SkeletonLoader/SkeletonLoader";
 import useDevice from "./hooks/useDevice";
 import ACTIVE_PAGE from "./templates/MobileNavigation/constants";
+import QrCode from "./templates/QrCode/QrCode";
 
 const Home = lazy(() => import("./templates/Home/Home"));
 const GiftList = lazy(() => import("./templates/GiftList/GiftList"));
@@ -92,6 +93,7 @@ function App() {
 				<ChangeLanguage />
 			</Suspense>
 		),
+		[ACTIVE_PAGE.QRCODE]: <QrCode />,
 	};
 	return (
 		<div className="App">
