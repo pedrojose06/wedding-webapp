@@ -8,11 +8,16 @@ export default i18n
 	.use(initReactI18next)
 	.use(Backend)
 	.init({
-		lng: "pt",
+		lng: "en",
 		fallbackLng: "en",
+		ns: ["translation", "routes"], // Make sure 'routes' is included here
+		defaultNS: "translation",
 		debug: false,
 		returnObjects: true,
+		interpolation: {
+			escapeValue: false,
+		},
 		backend: {
-			loadPath: "/locales/{{lng}}/translation.json",
+			loadPath: "/locales/{{lng}}/{{ns}}.json",
 		},
 	});

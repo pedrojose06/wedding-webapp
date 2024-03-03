@@ -10,6 +10,7 @@ import ACTIVE_PAGE from "../MobileNavigation/constants";
 export default function Home() {
 	const [, setHomepage] = useAtom(activePage);
 	const { t } = useTranslation();
+	const { t: tRoutes } = useTranslation("routes");
 
 	setHomepage(ACTIVE_PAGE.HOME);
 
@@ -22,9 +23,9 @@ export default function Home() {
 			<div className="flex w-full justify-center pt-7">
 				<Button
 					className="w-3/4 bg-indigo-400 text-white rounded-full h-10 flex justify-center items-center"
+					to={tRoutes("wedding")}
 					icon={<IoGift className="mr-3" color="white" />}
 					text={t("NosDeUmPresente")}
-					onClick={() => setHomepage(ACTIVE_PAGE.GIFT_LIST)}
 				/>
 			</div>
 		</>

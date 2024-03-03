@@ -1,4 +1,5 @@
 import { useAtom } from "jotai";
+import { useTranslation } from "react-i18next";
 import {
 	IoGift,
 	IoGiftOutline,
@@ -15,25 +16,30 @@ import ACTIVE_PAGE from "../../templates/MobileNavigation/constants";
 
 export default function MobileBottomNavigation() {
 	const [page, setPage] = useAtom(activePage);
+	const { t: tRoute } = useTranslation("routes");
 
 	return (
 		<div className="flex justify-around h-16 border border-t-gray-200 bottom-0 w-full bg-white fixed bottom-0 ">
 			<Button
+				className="w-16"
 				icon={page === ACTIVE_PAGE.HOME ? <IoHome /> : <IoHomeOutline />}
-				width={64}
 				onClick={() => setPage(ACTIVE_PAGE.HOME)}
+				to={tRoute("wedding")}
 			/>
 			<Button
+				className="w-16"
 				icon={page === ACTIVE_PAGE.GIFT_LIST ? <IoList /> : <IoListOutline />}
-				width={64}
 				onClick={() => setPage(ACTIVE_PAGE.GIFT_LIST)}
+				to={tRoute("gift-list")}
 			/>
 			<Button
+				className="w-16"
 				icon={page === ACTIVE_PAGE.GIFT_DETAIL ? <IoGift /> : <IoGiftOutline />}
-				width={64}
 				onClick={() => setPage(ACTIVE_PAGE.GIFT_DETAIL)}
+				to={tRoute("gift")}
 			/>
 			<Button
+				className="w-16"
 				icon={
 					page === ACTIVE_PAGE.LANGUAGES ? (
 						<IoLanguage />
@@ -41,8 +47,8 @@ export default function MobileBottomNavigation() {
 						<IoLanguageOutline />
 					)
 				}
-				width={64}
 				onClick={() => setPage(ACTIVE_PAGE.LANGUAGES)}
+				to={tRoute("languages")}
 			/>
 		</div>
 	);

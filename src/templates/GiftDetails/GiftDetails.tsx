@@ -70,6 +70,7 @@ export default function GiftDetails() {
 					</div>
 					<Button
 						className="bg-indigo-500 text-white w-4/5 rounded-2xl flex justify-center items-center mx-auto h-12"
+						to="qr-code"
 						icon={<IoQrCode className="mr-3" color="white" />}
 						onClick={() => setPage(ACTIVE_PAGE.QRCODE)}
 						text={t("GerarQRCode")}
