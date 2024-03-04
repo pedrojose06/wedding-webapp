@@ -8,16 +8,10 @@ import Title from "../../components/Title/Title";
 import ACTIVE_PAGE from "../../templates/MobileNavigation/constants";
 
 export default function MobileTopNavigation() {
+	const [page] = useAtom(activePage);
 	const btnIcon = <IoArrowBackOutline />;
-	const [page, setPage] = useAtom(activePage);
 	const { t } = useTranslation();
 	const navigate = useNavigate();
-
-	const PAGE_BACK = {
-		[ACTIVE_PAGE.HOME]: ACTIVE_PAGE.HOME,
-		[ACTIVE_PAGE.GIFT_LIST]: ACTIVE_PAGE.GIFT_LIST,
-		[ACTIVE_PAGE.GIFT_DETAIL]: ACTIVE_PAGE.GIFT_DETAIL,
-	};
 
 	return (
 		<div

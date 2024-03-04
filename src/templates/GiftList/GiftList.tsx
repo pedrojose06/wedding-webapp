@@ -1,4 +1,5 @@
 import { useAtom } from "jotai";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import giftList from "../../assets/json/gifts/gift-list.json";
 import { IGifts } from "../../atoms/GiftChosen/activeGift";
@@ -10,8 +11,11 @@ import ACTIVE_PAGE from "../MobileNavigation/constants";
 function GiftList() {
 	const { t } = useTranslation();
 	const gifts = giftList as IGifts[];
-	const [page, setPage] = useAtom(activePage);
-	setPage(ACTIVE_PAGE.GIFT_LIST);
+	const [, setPage] = useAtom(activePage);
+
+	useEffect(() => {
+		setPage(ACTIVE_PAGE.GIFT_LIST);
+	}, [setPage]);
 
 	return (
 		<div className="pb-20">

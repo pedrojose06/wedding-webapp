@@ -1,4 +1,5 @@
 import { useAtom } from "jotai";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { IoGift } from "react-icons/io5";
 import Wedding from "../../assets/png/wedding.png";
@@ -8,11 +9,13 @@ import Image from "../../components/Image/Image";
 import ACTIVE_PAGE from "../MobileNavigation/constants";
 
 export default function Home() {
-	const [, setHomepage] = useAtom(activePage);
+	const [, setPage] = useAtom(activePage);
 	const { t } = useTranslation();
 	const { t: tRoute } = useTranslation("routes");
 
-	setHomepage(ACTIVE_PAGE.HOME);
+	useEffect(() => {
+		setPage(ACTIVE_PAGE.HOME);
+	}, [setPage]);
 
 	return (
 		<>

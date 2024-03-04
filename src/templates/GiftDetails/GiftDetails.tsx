@@ -1,6 +1,7 @@
 import { atom, useAtom } from "jotai";
 import { useTranslation } from "react-i18next";
 
+import { useEffect } from "react";
 import { IoQrCode } from "react-icons/io5";
 import { activeGift } from "../../atoms/GiftChosen/activeGift";
 import { activePage } from "../../atoms/Navigation/activePageATM";
@@ -35,7 +36,9 @@ export default function GiftDetails() {
 		}, 300);
 	};
 
-	setPage(ACTIVE_PAGE.GIFT_DETAIL);
+	useEffect(() => {
+		setPage(ACTIVE_PAGE.GIFT_DETAIL);
+	}, [setPage]);
 
 	return (
 		<>
