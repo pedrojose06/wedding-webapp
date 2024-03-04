@@ -35,6 +35,8 @@ export default function GiftDetails() {
 		}, 300);
 	};
 
+	setPage(ACTIVE_PAGE.GIFT_DETAIL);
+
 	return (
 		<>
 			{Object.keys(chosenGift).length ? (

@@ -1,6 +1,7 @@
 import { atom } from "jotai";
 
 export type IGifts = {
+	id: number;
 	name: string;
 	image: string;
 	price: number;

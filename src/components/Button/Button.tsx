@@ -4,16 +4,20 @@ import { Link } from "react-router-dom";
 interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	text?: string;
 	icon?: ReactNode;
-	to: string;
+	to?: string;
+	className?: string;
+	onClick?: () => void;
 }
 
-function Button({ text, icon, color, to, ...props }: IButton) {
+function Button({ text, icon, to, className, onClick }: IButton) {
 	return (
-		<Link to={to} className="flex items-center justify-center font-bold">
-			<button type="button" {...props}>
-				{icon}
-				{text}
-			</button>
+		<Link
+			className={`flex items-center justify-center font-semibold ${className}`}
+			to={to ?? "/"}
+			onClick={onClick}
+		>
+			{icon}
+			{text}
 		</Link>
 	);
 }

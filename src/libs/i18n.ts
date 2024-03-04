@@ -8,7 +8,7 @@ export default i18n
 	.use(initReactI18next)
 	.use(Backend)
 	.init({
-		lng: "en",
+		lng: "pt",
 		fallbackLng: "en",
 		ns: ["translation", "routes"], // Make sure 'routes' is included here
 		defaultNS: "translation",

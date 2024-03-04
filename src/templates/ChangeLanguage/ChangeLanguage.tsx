@@ -1,5 +1,12 @@
+import { useAtom } from "jotai";
 import { useTranslation } from "react-i18next";
+import { activePage } from "../../atoms/Navigation/activePageATM";
+import ACTIVE_PAGE from "../MobileNavigation/constants";
+
 export default function ChangeLanguage() {
+	const [page, setPage] = useAtom(activePage);
+	setPage(ACTIVE_PAGE.LANGUAGES);
+
 	const {
 		t,
 		i18n: { changeLanguage, language },
