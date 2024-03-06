@@ -16,5 +16,9 @@
     "IrParaListaDePresentes" : "Voir la liste de cadeaux",
     "PrecoUnitario": "Prix unitaire",
     "Quantidade": "Quantité",
-    "Total": "Totale"
+    "Total": "Totale",
+    "SemLista": "Aucune liste de cadeaux",
+    "Atencao": "Attention",
+    "InfoDePagamento": "Le Qr Code vous dirigera vers le paiement dans votre application bancaire. N'hésitez pas à y choisir le montant.",
+    "EscolhaIdioma": "Choisissez la langue"
 } 

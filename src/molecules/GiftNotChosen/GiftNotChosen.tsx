@@ -29,6 +29,7 @@ export default function GiftNotChosen() {
 				className="bg-gray-200 h-9 w-fit border rounded-3xl px-4"
 				text={t("IrParaListaDePresentes")}
 				onClick={() => setPage(ACTIVE_PAGE.GIFT_LIST)}
+				to={t("gift-list")}
 			/>
 			<a
 				className="text-gray-200 text-sm absolute bottom-20 text-right w-full pr-4"

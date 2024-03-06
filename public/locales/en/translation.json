@@ -16,5 +16,9 @@
     "IrParaListaDePresentes" : "Go to Gift List",
     "PrecoUnitario": "Unit Price",
     "Quantidade": "Quantity",
-    "Total": "Amount"
+    "Total": "Amount",
+    "SemLista": "No gift list",
+    "Atencao": "Atenção",
+    "InfoDePagamento": "The Qr Code will direct you to payment in your bank app. Feel free to choose the amount there.",
+    "EscolhaIdioma": "Choose Language"
 } 

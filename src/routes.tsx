@@ -23,7 +23,12 @@ export default function MainRoutes() {
 			/>
 			<Route path={tRoute("gift")} element={<GiftDetails />} />
 			<Route path={tRoute("languages")} element={<ChangeLanguage />} />
-			<Route path={tRoute("qr-code")} element={<QrCode />} />
+			<Route
+				path={`${tRoute("gift-list")}/${tRoute("gift")}/:id/${tRoute(
+					"qr-code",
+				)}`}
+				element={<QrCode />}
+			/>
 		</Routes>
 	);
 }

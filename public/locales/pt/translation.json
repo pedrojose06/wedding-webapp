@@ -16,5 +16,10 @@
     "IrParaListaDePresentes" : "Ir para lista de presentes",
     "PrecoUnitario": "Preço unitário",
     "Quantidade": "Quantidade",
-    "Total": "Total"
+    "Total": "Total",
+    "SemLista": "Nenhum presente encontrado",
+    "Atencao": "Atenção",
+    "InfoDePagamento": "O Qr Code te direcionará para o pagamento no seu app do banco. Sinta-se a vontade para escolher o valor lá.",
+    "EscolhaIdioma": "Fique a vontade para escolher um idioma"
+
 } 

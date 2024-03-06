@@ -18,21 +18,29 @@ function GiftList() {
 	}, [setPage]);
 
 	return (
-		<div className="pb-20">
-			<h1 className="p-4 bold text-2xl">{t("PresentesEExperiencias")}</h1>
-			<Each
-				of={gifts}
-				render={(item, index) => (
-					<Gift
-						key={index}
-						id={item.id}
-						name={item.name}
-						image={item.image}
-						price={item.price}
+		<>
+			{gifts.length === 0 ? (
+				<div className="flex justify-center items-center h-80">
+					<h1 className="text-2xl">{t("SemLista")}</h1>
+				</div>
+			) : (
+				<div className="pb-20">
+					<h1 className="p-4 bold text-2xl">{t("PresentesEExperiencias")}</h1>
+					<Each
+						of={gifts}
+						render={(item, index) => (
+							<Gift
+								key={index}
+								id={item.id}
+								name={item.name}
+								image={item.image}
+								price={item.price}
+							/>
+						)}
 					/>
-				)}
-			/>
-		</div>
+				</div>
+			)}
+		</>
 	);
 }
 
